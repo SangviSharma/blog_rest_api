@@ -27,12 +27,10 @@ public class PostServiceImpl implements PostService {
                 .orElseThrow(() -> new ResourceNotFoundException("Post", "postId", id));
         return post;
     }
-
     @Override
     public Post createPost(Post post) {
         return postRepository.save(post);
     }
-
     @Override
     public Post updatePost(Long id, Post postUpdate) {
         Post post = postRepository
@@ -43,7 +41,6 @@ public class PostServiceImpl implements PostService {
         post.setContent(postUpdate.getContent());
         return postRepository.save(post);
     }
-
     @Override
     public void deletePost(Long id) {
         Post post = postRepository

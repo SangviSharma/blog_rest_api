@@ -9,13 +9,11 @@ public class BlogApiException extends RuntimeException{
     @Getter
     private HttpStatus status;
     private String message;
-
     public BlogApiException(HttpStatus status, String message) {
         super(message);
         this.status = status;
         this.message = message;
     }
-
     public BlogApiException(String customMessage, HttpStatus status, String message) {
         super(customMessage);
         this.status = status;
